@@ -1,5 +1,7 @@
 # databricks-medallion-lakehouse
 
+[![CI](https://github.com/rajeshrajput97/databricks-medallion-lakehouse/actions/workflows/ci.yml/badge.svg)](https://github.com/rajeshrajput97/databricks-medallion-lakehouse/actions/workflows/ci.yml)
+
 A compact Bronze / Silver / Gold pipeline that shows a Medallion-style lakehouse layout on local files. The same transforms run on **pandas** by default, and on **PySpark** when it is installed. Output is written as Parquet in a Delta-style directory tree (`warehouse/{bronze,silver,gold}/...`).
 
 This is a reference implementation for local study and interviews. It is not a Databricks workspace job and does not require a cluster.
@@ -54,7 +56,7 @@ The sample file includes duplicates, missing identifiers, a negative quantity, a
 pytest -q
 ```
 
-Pandas-backed tests always run. If `pyspark` is importable, a second set of tests exercises the Spark engine; otherwise those tests are skipped.
+Pandas-backed tests always run. If `pyspark` is importable, a second set of tests exercises the Spark engine; otherwise those tests are skipped. The same command runs in GitHub Actions on every push to `main`.
 
 ## Project layout
 
