@@ -1,0 +1,2 @@
+# Optional. Tests automatically use PySpark when it is importable.
+pyspark>=3.5
